@@ -3,6 +3,7 @@
  */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHardDiskPlugin = require('html-webpack-harddisk-plugin');
 
 /**
  * Export the configuration.
@@ -70,7 +71,12 @@ module.exports = {
 		 */
 		new HtmlWebpackPlugin({
 			title: 'Weatheros',
-			filename: '../index.html'
+			filename: 'index.html',
+			alwaysWriteToDisk: true
+		}),
+
+		new HtmlWebpackHardDiskPlugin({
+			outputPath: path.resolve(__dirname, 'public')
 		})
 	]
 };
