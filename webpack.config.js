@@ -2,6 +2,7 @@
  * The module dependencies.
  */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Export the configuration.
@@ -59,4 +60,17 @@ module.exports = {
 			},
 		],
 	},
+
+	/**
+	 * Customize the build process.
+	 */
+	plugins: [
+		/**
+		 * Output the main HTML file.
+		 */
+		new HtmlWebpackPlugin({
+			title: 'Weatheros',
+			filename: '../index.html'
+		})
+	]
 };
