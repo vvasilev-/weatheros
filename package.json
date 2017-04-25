@@ -5,6 +5,10 @@
   "repository": "git@github.com:vvasilev-/weatheros.git",
   "author": "Viktor Vasilev <liberalcho@gmail.com>",
   "license": "MIT",
+  "scripts": {
+  	"dev": "webpack -w",
+  	"build": "webpack"
+  },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
