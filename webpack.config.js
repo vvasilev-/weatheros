@@ -33,7 +33,7 @@ module.exports = {
 		/**
 		 * The path that will contain the bundles.
 		 */
-		path: path.resolve(__dirname, 'public/assets'),
+		path: path.resolve(__dirname, 'build/assets'),
 	},
 
 	/**
@@ -76,7 +76,7 @@ module.exports = {
 		}),
 
 		new HtmlWebpackHardDiskPlugin({
-			outputPath: path.resolve(__dirname, 'public')
+			outputPath: path.resolve(__dirname, 'build')
 		})
 	]
 };
