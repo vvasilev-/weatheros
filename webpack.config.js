@@ -12,6 +12,11 @@ const HtmlWebpackHardDiskPlugin = require('html-webpack-harddisk-plugin');
  */
 module.exports = {
 	/**
+	 * The base directory for resolving entry points.
+	 */
+	context: path.resolve(__dirname, 'app'),
+
+	/**
 	 * The point at which the application starts executing.
 	 */
 	entry: './src/index.js',
@@ -28,7 +33,7 @@ module.exports = {
 		/**
 		 * The path that will contain the bundles.
 		 */
-		path: path.resolve(__dirname, 'build')
+		path: path.resolve(__dirname, 'public')
 	},
 
 	/**
@@ -76,8 +81,7 @@ module.exports = {
 		 */
 		new HtmlWebpackPlugin({
 			title: 'Weatheros',
-			filename: 'index.html',
-			template: 'public/index.html',
+			template: 'index.html',
 			inject: false,
 			alwaysWriteToDisk: true
 		}),
