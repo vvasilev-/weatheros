@@ -12,14 +12,9 @@ const HtmlWebpackHardDiskPlugin = require('html-webpack-harddisk-plugin');
  */
 module.exports = {
 	/**
-	 * The base directory for resolving entry points.
-	 */
-	context: path.resolve(__dirname, 'src'),
-
-	/**
 	 * The point at which the application starts executing.
 	 */
-	entry: './index.js',
+	entry: './src/index.js',
 
 	/**
 	 * Instruct webpack how and where it should output the bundles.
@@ -28,12 +23,12 @@ module.exports = {
 		/**
 		 * The name of the output bundle.
 		 */
-		filename: 'bundle.js',
+		filename: 'assets/bundle.js',
 
 		/**
 		 * The path that will contain the bundles.
 		 */
-		path: path.resolve(__dirname, 'build/assets'),
+		path: path.resolve(__dirname, 'build')
 	},
 
 	/**
@@ -63,6 +58,16 @@ module.exports = {
 	},
 
 	/**
+	 * Setup the server used for development.
+	 */
+	devServer: {
+		/**
+		 * Make CLI output of webpack less verbose.
+		 */
+		noInfo: true
+	},
+
+	/**
 	 * Customize the build process.
 	 */
 	plugins: [
@@ -72,11 +77,11 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'Weatheros',
 			filename: 'index.html',
+			template: 'public/index.html',
+			inject: false,
 			alwaysWriteToDisk: true
 		}),
 
-		new HtmlWebpackHardDiskPlugin({
-			outputPath: path.resolve(__dirname, 'build')
-		})
+		new HtmlWebpackHardDiskPlugin()
 	]
 };
