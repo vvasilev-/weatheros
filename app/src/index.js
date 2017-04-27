@@ -1,1 +1,3 @@
+// @flow
+
 // Place the code here...
