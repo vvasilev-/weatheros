@@ -33,7 +33,7 @@ module.exports = {
 		/**
 		 * The path that will contain the bundles.
 		 */
-		path: path.resolve(__dirname, 'public')
+		path: path.resolve(__dirname, './public')
 	},
 
 	/**
@@ -59,6 +59,19 @@ module.exports = {
 					}
 				]
 			}
+		]
+	},
+
+	/**
+	 * Configure how modules are resolved.
+	 */
+	resolve: {
+		/**
+		 * Create aliases to import the components more easily.
+		 */
+		modules: [
+			'app/src',
+			'node_modules'
 		]
 	},
 
