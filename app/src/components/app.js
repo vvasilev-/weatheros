@@ -10,7 +10,7 @@ import React from 'react';
  *
  * @return {React.Element}
  */
-const App = () => (
+const App = (): React$Element<any> => (
 	<div>Weatheros!</div>
 );
 
