@@ -1,10 +1,21 @@
 /* @flow */
 
 /**
+ * The typings.
+ */
+import type { Store } from 'redux';
+
+/**
  * The external dependencies.
  */
-import { createStore } from 'redux';
-import type { Store } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { createCycleMiddleware } from 'redux-cycles';
+import { run } from '@cycle/run';
+
+/**
+ * The internal dependencies.
+ */
+import effects from 'effects';
 
 /**
  * Create the root reducer that will take care
@@ -16,8 +27,25 @@ import type { Store } from 'redux';
 const reducer: Function = (state: Object): Object => state;
 
 /**
- * Create a Redux store that will keep the state of the app.
+ * Create the enhancers that will apply to the store.
+ *
+ * @type {Function}
  */
-const store: Store = createStore(reducer, {});
+const cycle: Function = createCycleMiddleware();
+const enhancer: Function = applyMiddleware(cycle);
+
+/**
+ * Create a Redux store that will keep the state of the app.
+ *
+ * @type {Object}
+ */
+const store: Store = createStore(reducer, {}, enhancer);
+
+/**
+ * Start the side effects.
+ */
+run(effects, {
+	ACTION: cycle.makeActionDriver()
+});
 
 export default store;
