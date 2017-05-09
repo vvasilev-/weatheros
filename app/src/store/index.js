@@ -3,19 +3,18 @@
 /**
  * The typings.
  */
-import type { Store } from 'redux';
+import type { Store, StoreEnhancer, Reducer } from 'redux';
 
 /**
  * The external dependencies.
  */
 import { createStore, applyMiddleware } from 'redux';
-import { createCycleMiddleware } from 'redux-cycles';
-import { run } from '@cycle/run';
+import createSagaMiddleware from 'redux-saga';
 
 /**
  * The internal dependencies.
  */
-import effects from 'effects';
+import ping from 'effects/ping';
 
 /**
  * Create the root reducer that will take care
@@ -24,15 +23,15 @@ import effects from 'effects';
  * @param  {Object} state
  * @return {Object}
  */
-const reducer: Function = (state: Object): Object => state;
+const reducer: Reducer = (state: Object): Object => state;
 
 /**
  * Create the enhancers that will apply to the store.
  *
  * @type {Function}
  */
-const cycle: Function = createCycleMiddleware();
-const enhancer: Function = applyMiddleware(cycle);
+const saga: createSagaMiddleware = createSagaMiddleware();
+const enhancer: StoreEnhancer = applyMiddleware(saga);
 
 /**
  * Create a Redux store that will keep the state of the app.
@@ -42,10 +41,8 @@ const enhancer: Function = applyMiddleware(cycle);
 const store: Store = createStore(reducer, {}, enhancer);
 
 /**
- * Start the side effects.
+ * Start the effects.
  */
-run(effects, {
-	ACTION: cycle.makeActionDriver()
-});
+saga.run(ping);
 
 export default store;
