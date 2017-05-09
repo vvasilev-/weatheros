@@ -28,10 +28,12 @@
   },
   "dependencies": {
     "@cycle/run": "^3.1.0",
+    "babel-polyfill": "^6.23.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "redux": "^3.6.0",
-    "redux-cycles": "^0.4.0"
+    "redux-cycles": "^0.4.0",
+    "redux-saga": "^0.15.3"
   }
 }
