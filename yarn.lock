@@ -2,12 +2,6 @@
 # yarn lockfile v1
 
 
-"@cycle/run@*", "@cycle/run@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@cycle/run/-/run-3.1.0.tgz#76df582a501d2d1b871f8f6decf263afae090384"
-  dependencies:
-    xstream "10.x"
-
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -3242,12 +3236,6 @@ recast@~0.11.12:
     private "~0.1.5"
     source-map "~0.5.0"
 
-redux-cycles@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/redux-cycles/-/redux-cycles-0.4.0.tgz#c1d777f1e6cc3b594b9f46f290089a2fd45431e0"
-  dependencies:
-    "@cycle/run" "*"
-
 redux-saga@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.15.3.tgz#be2b86b4ad46bf0d84fcfcb0ca96cfc33db91acb"
@@ -4079,12 +4067,6 @@ xml-char-classes@^1.0.0:
 xml-name-validator@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-2.0.1.tgz#4d8b8f1eccd3419aa362061becef515e1e559635"
-
-xstream@10.x:
-  version "10.7.0"
-  resolved "https://registry.yarnpkg.com/xstream/-/xstream-10.7.0.tgz#918c2707df1c5416380f2b8fe66885bf6f880602"
-  dependencies:
-    symbol-observable "^1.0.2"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0:
   version "4.0.1"
