@@ -11,7 +11,7 @@ import { Provider } from 'react-redux';
 /**
  * The internal dependencies.
  */
-import store from 'store';
+import store from 'state';
 import App from 'components/app';
 
 /**
