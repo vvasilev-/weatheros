@@ -8,13 +8,14 @@ import type { Store, StoreEnhancer, Reducer } from 'redux';
 /**
  * The external dependencies.
  */
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 /**
  * The internal dependencies.
  */
-import ping from 'effects/ping';
+import { autoload } from 'common/helpers';
+import locations from 'state/locations/reducer';
 
 /**
  * Create the root reducer that will take care
@@ -23,7 +24,9 @@ import ping from 'effects/ping';
  * @param  {Object} state
  * @return {Object}
  */
-const reducer: Reducer = (state: Object): Object => state;
+const reducer: Reducer = combineReducers({
+	locations
+});
 
 /**
  * Create the enhancers that will apply to the store.
@@ -43,6 +46,6 @@ const store: Store = createStore(reducer, {}, enhancer);
 /**
  * Start the effects.
  */
-saga.run(ping);
+autoload(require.context('./', true, /sagas\.js$/), (path, file) => saga.run(file.default));
 
 export default store;
