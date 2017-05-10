@@ -28,6 +28,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
+    "glamor": "^2.20.25",
+    "glamorous": "^3.13.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
