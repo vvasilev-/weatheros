@@ -8,5 +8,6 @@
  * @return {void}
  */
 export function autoload(context: Object, callback: Function): void {
+	// $FlowFixMe
 	context.keys().forEach(file => callback(file, context(file)));
 }

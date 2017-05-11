@@ -45,6 +45,8 @@ const store: Store = createStore(reducer, {}, enhancer);
 
 /**
  * Start the effects.
+ *
+ * $FlowFixMe
  */
 autoload(require.context('./', true, /sagas\.js$/), (path, file) => saga.run(file.default));
 
