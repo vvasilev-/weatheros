@@ -27,6 +27,7 @@
     "webpack-dev-server": "^2.4.4"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
     "glamor": "^2.20.25",
     "glamorous": "^3.13.3",
