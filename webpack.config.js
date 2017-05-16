@@ -4,6 +4,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHardDiskPlugin = require('html-webpack-harddisk-plugin');
+const DotEnvWebpackPlugin = require('dotenv-webpack');
 
 /**
  * Export the configuration.
@@ -99,6 +100,11 @@ module.exports = {
 			alwaysWriteToDisk: true
 		}),
 
-		new HtmlWebpackHardDiskPlugin()
+		new HtmlWebpackHardDiskPlugin(),
+
+		/**
+		 * Inject ENV variables into the bundle.
+		 */
+		new DotEnvWebpackPlugin()
 	]
 };
