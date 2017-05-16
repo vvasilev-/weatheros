@@ -4,9 +4,7 @@
  * Start the local workers.
  *
  * @return {void}
- *
- * $FlowFixMe
  */
-export default function* foreman() {
+export default function* foreman(): Generator<any, void, any> {
 	console.log('work, work!');
 }
