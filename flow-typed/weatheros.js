@@ -13,4 +13,9 @@ declare module 'weatheros' {
 		current: ?string,
 		requesting: boolean
 	};
+
+	declare export type GeolocationResponse = {
+		position?: Position,
+		error?: PositionError
+	};
 }

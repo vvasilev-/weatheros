@@ -16,6 +16,7 @@ import createSagaMiddleware from 'redux-saga';
  */
 import { autoload } from 'common/helpers';
 import locations from 'state/locations/reducer';
+import geolocation from 'state/geolocation/reducer';
 
 /**
  * Create the root reducer that will take care
@@ -25,7 +26,8 @@ import locations from 'state/locations/reducer';
  * @return {Object}
  */
 const reducer: Reducer = combineReducers({
-	locations
+	locations,
+	geolocation
 });
 
 /**
