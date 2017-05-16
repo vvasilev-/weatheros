@@ -26,9 +26,11 @@ import {
  * @param  {Object} state
  * @param  {Object} action
  * @return {Object}
+ *
+ * $FlowFixMe
  */
 const position: Reducer = handleActions({
-	[findMyLocationSuccess]: (state, { payload }) => payload
+	[findMyLocationSuccess]: (state, { payload }): Object => payload
 }, {});
 
 /**
@@ -37,11 +39,13 @@ const position: Reducer = handleActions({
  * @param  {Object} state
  * @param  {Object} action
  * @return {Object}
+ *
+ * $FlowFixMe
  */
 const requesting: Reducer = handleActions({
-	[findMyLocation]: () => true,
-	[findMyLocationSuccess]: () => false,
-	[findMyLocationFailure]: () => false
+	[findMyLocation]: (): boolean => true,
+	[findMyLocationSuccess]: (): boolean => false,
+	[findMyLocationFailure]: (): boolean => false
 }, false);
 
 export default combineReducers({

@@ -31,6 +31,8 @@ import {
  */
 export function* findMyLocationWorker(): Generator<IOEffect, void, any> {
 	const channel: Channel = yield call(createGeolocationChannel);
+
+	// $FlowFixMe
 	const response: GeolocationResponse = yield take(channel);
 
 	if (response.position) {
