@@ -3,7 +3,7 @@
 /**
  * The typings.
  */
-import type { Reducer  } from 'redux';
+import type { Reducer } from 'redux';
 
 /**
  * The external dependencies.
