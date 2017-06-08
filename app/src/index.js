@@ -14,12 +14,14 @@ import { normalize } from 'polished';
  * The internal dependencies.
  */
 import store from 'state';
+import baseStyles from 'common/base-styles';
 import App from 'components/app';
 
 /**
  * Normalize the browser styles.
  */
 injectGlobal`${normalize()}`;
+injectGlobal`${baseStyles()}`;
 
 /**
  * Start!
