@@ -26,4 +26,11 @@ declare module 'weatheros' {
 			descriptor: LocationRequestDescriptor
 		}
 	};
+
+	declare export type IconProps = {
+		viewBox: string,
+		width?: number,
+		height?: number,
+		children: React$Element
+	};
 }
