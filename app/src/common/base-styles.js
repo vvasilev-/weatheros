@@ -9,6 +9,7 @@ export default function() {
 			font-family: 'Lato', sans-serif;
 			font-size: 14px;
 			color: #000;
+			background: #f6f6f6;
 		}
 	`;
 }
