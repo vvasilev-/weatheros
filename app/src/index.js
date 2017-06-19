@@ -30,4 +30,4 @@ ReactDOM.render(
 	<Provider store={store}>
 		<App />
 	</Provider>,
-document.querySelector('.wrapper'));
+document.querySelector('.app'));
