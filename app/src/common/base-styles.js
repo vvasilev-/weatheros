@@ -1,8 +1,15 @@
 export default function() {
 	return `
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
 		html {
 			height: 100%;
 			overflow-y: scroll;
+			box-sizing: border-box;
 		}
 
 		body {
